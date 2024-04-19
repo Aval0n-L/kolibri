@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "kolibri:build:production"
+              "buildTarget": "kolibri:build:production"
             },
             "development": {
-              "browserTarget": "kolibri:build:development"
+              "buildTarget": "kolibri:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kolibri:build"
+            "buildTarget": "kolibri:build"
           }
         },
         "test": {
