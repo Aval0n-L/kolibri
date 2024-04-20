@@ -1,11 +1,41 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('../app.component.scss');
+
+
+.backplace {
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
-.hero {
+.backvideo {
     width: 100%;
-    height: 100%;
-    
+    height: auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
 }
+
+.mainplace {
+    display: none;
+    width: 80vw;
+    left: 10%;
+    height: 40vh;
+    overflow: auto;
+    background: rgba(black, 0.66);
+    color: white;
+    position: relative;
+    padding: 1rem;
+}
+
+.viewport-header {
+    position: relative;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
