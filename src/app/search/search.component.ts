@@ -8,7 +8,7 @@ import { QA } from '../admin/admin.component';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  collections: string[] = ['dotNet C#', 'Database SQL EF Dapper', 'REST', 'Terrafrom', 'RabbitMQ', 'Microservices', 'Docker', 'Git', 'CI CD', 'OOP SOLID', 'MVVM', 'Angular TypeScript Html Css'];  // Известные имена коллекций
+  collections: string[] = [];
   selectedCollection: string | null = null;  
   qaList: QA[] = [];  
   searchQuery: string = ''; 
