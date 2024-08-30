@@ -1,6 +1,5 @@
 @import url('../app.component.scss');
 
-
 .backplace {
     object-fit: cover;
     position: fixed;
@@ -20,22 +19,67 @@
 }
 
 .mainplace {
-    display: none;
-    width: 80vw;
-    left: 10%;
-    height: 40vh;
+    display: block;  // Ensuring the main content is displayed
+    width: 90vw;
+    left: 3%;
+    top: 5vh;  // Adjusted to vertically center in the viewport
+    height: 80vh;  // Increased height for better visibility of content
     overflow: auto;
-    background: rgba(black, 0.66);
+    background: rgba(0, 0, 0, 0.66);  // Updated to correct syntax for black background with opacity
     color: white;
     position: relative;
-    padding: 1rem;
+    padding: 2rem;  // Increased padding for better spacing
+    border-radius: 10px;  // Added border radius for smooth edges
+    z-index: 1;  // Ensures it’s above the background video
 }
 
 .viewport-header {
-    position: relative;
-    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;  // Ensures the header is above the main content
+}
+
+nav {
+    margin-bottom: 20px;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 10px;
+
+      li {
+        display: inline;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          padding: 10px 20px;
+          border: 1px solid #fff;
+          border-radius: 4px;
+          transition: background 0.3s;
+
+          &:hover,
+          &.active {
+            background: #f39c12;
+            color: #fff;
+          }
+        }
+      }
+    }
   }
+
+router-outlet {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 3;  // Ensure it’s above background and header
+}

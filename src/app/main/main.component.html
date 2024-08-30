@@ -4,11 +4,14 @@
     </video>    
 </div>
 <div class="mainplace">
+    <!-- Navigation Links -->
+    <nav>
+      <ul>
+          <li><a routerLink="/search" routerLinkActive="active">Search</a></li>
+          <li><a routerLink="/admin" routerLinkActive="active">Admin</a></li>
+      </ul>
+  </nav>
 
-    <header class="viewport-header">
-        <h1>
-          Explore
-          <span>Montana</span>
-        </h1>
-      </header>
+  <!-- Router Outlet to Display Components -->
+  <router-outlet></router-outlet>
 </div>

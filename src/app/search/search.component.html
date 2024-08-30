@@ -1,0 +1,33 @@
+<div>
+  <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+    <button *ngFor="let collection of collections" (click)="selectCollection(collection)">
+      {{ collection }}
+    </button>
+  </div>
+
+  <div *ngIf="selectedCollection">
+    <input type="text" placeholder="Search..." [(ngModel)]="searchQuery" (input)="onSearch()">
+  </div>
+
+  <div *ngIf="filteredQaList.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Question</th>
+          <th>EN</th>
+          <th>RU</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let qa of filteredQaList">
+          <td>{{ qa.question }}</td>
+          <td>{{ qa.answerEn }}</td>
+          <td>{{ qa.answerRu }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="filteredQaList.length === 0 && selectedCollection">
+    <p>There are no collections {{ selectedCollection }}</p>
+  </div>
+</div>

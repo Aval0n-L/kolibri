@@ -1,0 +1,20 @@
+<div>
+    <label for="collectionName">Collection name:</label>
+    <input id="collectionName" type="text" [(ngModel)]="currentCollectionName" placeholder="Collection name">
+    <button (click)="setCollectionName(currentCollectionName)">loading...</button>
+
+    <form (ngSubmit)="onSubmit()">
+        <input type="text" placeholder="Question" [(ngModel)]="qa.question" name="question" required>
+        <input type="text" placeholder="AnswerEn" [(ngModel)]="qa.answerEn" name="answerEn" required>
+        <input type="text" placeholder="AnswerRu" [(ngModel)]="qa.answerRu" name="answerRu" required>
+        <button type="submit">{{ qa.id ? 'Update' : 'Add' }} Q&A</button>
+    </form>
+
+    <div *ngFor="let qa of qaList | async">
+        <h3>{{ qa.question }}</h3>
+        <p>{{ qa.answerEn }}</p>
+        <p>{{ qa.answerRu }}</p>
+        <button (click)="onEdit(qa)">Edit</button>
+        <button (click)="onDelete(qa)">Delete</button>
+    </div>
+</div>
